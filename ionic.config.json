@@ -1,5 +1,7 @@
 {
   "name": "ionic-bnb-yy",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
