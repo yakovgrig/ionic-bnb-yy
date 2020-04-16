@@ -12,14 +12,22 @@ export class DiscoverPage implements OnInit {
 
   constructor(private placesService: PlacesService, private MenuController: MenuController) { }
 
+  featuredPlace: Place;
   loadedPlaces: Place [];
   
   ngOnInit() {
-      this.loadedPlaces = this.placesService.places;
+    let places = this.placesService.places;
+    this.featuredPlace = places[0];  
+    this.loadedPlaces = places.slice(1);
   }
   
   onOpenMenu(){
     this.MenuController.open("m1");
 
+  }
+
+  onFilterUpdateEvent(event: CustomEvent<any>){
+
+    console.log(event);
   }
 }
