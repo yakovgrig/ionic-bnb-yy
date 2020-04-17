@@ -16,10 +16,14 @@ export class DiscoverPage implements OnInit {
   loadedPlaces: Place [];
   
   ngOnInit() {
+  }
+  
+  ionViewDidEnter(){
+
     let places = this.placesService.places;
     this.featuredPlace = places[0];  
     this.loadedPlaces = places.slice(1);
-  }
+  } 
   
   onOpenMenu(){
     this.MenuController.open("m1");
